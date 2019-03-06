@@ -32,3 +32,5 @@ console.log(obj.value) // 1
 参数如果是基本类型是按值传递，如果是引用类型按共享传递。
 
 3.如果一个函数执行后是一个闭包的话，那么这个函数生成的每个闭包都是独立的，改变任何一个闭包里的变量值，对于其他闭包而言，都不会起作用。
+
+4.https://necolas.github.io/normalize.css/latest/normalize.css
