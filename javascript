@@ -45,3 +45,14 @@ console.log(obj.value) // 1
 
 9.Fetch 也很适合做现在流行的同构应用，有人基于 Fetch 的语法，在 Node 端基于 http 库实现了node-fetch，又有人封装了用于同构应用的 isomorphic-fetch。
 注：同构(isomorphic/universal)就是使前后端运行同一套代码的意思，后端一般是指 NodeJS 环境。
+
+10.学会使用Object.create()和Object.assign()
+
+继承的时候
+（1）先在子类函数中用父类函数.call(this);
+（2）然后子类函数.prototype = Object.create(父类函数.prototype);
+（3）最后再用子类函数.prototype.constructor = 子类函数 一共三步。
+
+如果其中是子类函数继承多个父类函数的话，在完成第二步后，还需要：
+Object.assign(子类函数.prototype,其他父类函数.prototype);
+这一步是把其他父类函数的原型上的方法，copy到子类函数的原型上，这样实例化子类函数的时候，实例化出来的对象，就具备了所有父类函数原型上的方法
