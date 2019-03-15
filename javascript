@@ -95,3 +95,12 @@ function copy(obj){
     }    
   return newobj;    //函数必须有返回值，否则结构为undefined
 }
+
+15.Object类型判断
+let class2type = {}
+'Array Date RegExp Object Error'.split(' ').forEach(e => class2type[ '[object ' + e + ']' ] = e.toLowerCase()) 
+
+function type(obj) {
+    if (obj == null) return String(obj)
+    return typeof obj === 'object' ? class2type[ Object.prototype.toString.call(obj) ] || 'object' : typeof obj
+}
