@@ -74,3 +74,24 @@ ES6中推荐使用 Object.getPrototypeOf()方法来返回一个对象的 [[Proto
 （4）对象都是函数 new 出来的，除了上面两个特殊对象；
 （5）函数的 prototype 是对象，它有个 constructor 属性指向构造函数本身；
 （6）对象的 __proto__ 指向原型， __proto__ 将对象和原型连接起来组成了原型链。
+
+14.用递归进行深拷贝
+function copy(obj){
+ let newobj = null;   //声明一个变量用来储存拷贝之后的内容
+
+ //判断数据类型是否是复杂类型，如果是则调用自己，再次循环，如果不是，直接赋值即可，
+ //由于null不可以循环但类型又是object，所以这个需要对null进行判断
+    if(typeof(obj) == 'object' && obj !== null){ 
+
+//声明一个变量用以储存拷贝出来的值,根据参数的具体数据类型声明不同的类型来储存
+        newobj = obj instanceof Array? [] : {};   
+
+//循环obj 中的每一项，如果里面还有复杂数据类型，则直接利用递归再次调用copy函数
+        for(var i in obj){  
+            newobj[i] = copy(obj[i])
+        }
+    }else{
+        newobj = obj
+    }    
+  return newobj;    //函数必须有返回值，否则结构为undefined
+}
