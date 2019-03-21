@@ -111,3 +111,16 @@ function type(obj) {
     if (obj == null) return String(obj)
     return typeof obj === 'object' ? class2type[ Object.prototype.toString.call(obj) ] || 'object' : typeof obj
 }
+
+16.原型链继承---圣杯模式
+P是父级，C是子级
+var inherit = (function(c,p){
+	var F = function(){};
+	return function(c,p){
+		F.prototype = p.prototype;
+		c.prototype = new F();
+		c.uber = p.prototype;
+		c.prototype.constructor = c;
+	}
+})();
+
