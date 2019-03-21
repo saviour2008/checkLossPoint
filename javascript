@@ -124,3 +124,10 @@ var inherit = (function(c,p){
 	}
 })();
 
+17.
+es6: import / export
+commonjs: require / module.exports / exports---node.js
+amd: require / defined
+require优点是可以动态，而且是值拷贝，缺点是同步的
+import不支持动态，指向内存地址，导入值会随着导出值变化，异步的。
+
