@@ -57,6 +57,11 @@ console.log(obj.value) // 1
 Object.assign(子类函数.prototype,其他父类函数.prototype);
 这一步是把其他父类函数的原型上的方法，copy到子类函数的原型上，这样实例化子类函数的时候，实例化出来的对象，就具备了所有父类函数原型上的方法
 
+如果是new一个对象出来，则
+链接到原型: obj.__proto__ = Con.prototype
+绑定this: apply
+返回新对象(如果构造函数有自己 retrun 时，则返回该值)
+
 11.Object.keys()
 
 12.[[Prototype]]就是指__proto__,这是某对象的隐式原型，相当于实例化出来的对象的构造函数的原型对象。
