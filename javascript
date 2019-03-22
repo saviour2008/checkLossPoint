@@ -142,3 +142,5 @@ import不支持动态，指向内存地址，导入值会随着导出值变化�
 https://juejin.im/post/5c64d15d6fb9a049d37f9c20#heading-19
 https://www.jianshu.com/p/f1ed81738ccf
 https://www.e-learn.cn/content/wangluowenzhang/59229
+https://github.com/yygmind/blog/issues/14
+https://juejin.im/post/5c64d15d6fb9a049d37f9c20#heading-59
